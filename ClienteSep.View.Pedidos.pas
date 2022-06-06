@@ -19,8 +19,10 @@ type
     ListBox1: TListBox;
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure ListBoxItem1Click(Sender: TObject);
   private
     { Private declarations }
+    procedure CarregarPedidos;
   public
     { Public declarations }
   end;
@@ -30,30 +32,41 @@ var
 
 implementation
 
+Uses ClienteSep.View.Pedidos.Itens;
+
 {$R *.fmx}
 
-procedure TViewPedidos.FormCreate(Sender: TObject);
-var
-  I : integer;
+procedure TViewPedidos.CarregarPedidos;
 begin
- I := 0;
+  var I := 0;
   while I < 50 do
   begin
     var ListBoxItem := TListBoxItem.Create(ListBox1);
     ListBoxItem.Parent := ListBox1;
-    ListBoxItem.StyleLookup := 'ListBoxItemPedidos';
+    ListBoxItem.OnClick := ListBoxItem1Click;
+    ListBoxItem.StyleLookup := 'ListBoxitemPedidos';
     ListBoxItem.StylesData['TextNomeCliente'] := 'Cliente ' + I.ToString;
-    ListBoxItem.StylesData['TextDataAgendamento'] := ' Agendado para a hora que balofo acordar ' + I.ToString;
+    ListBoxItem.StylesData['TextDataAgendamento'] := ' Agendado para as 16h ' + I.ToString;
     Inc(I);
   end;
 end;
 
+procedure TViewPedidos.FormCreate(Sender: TObject);
+begin
+  CarregarPedidos;
+end;
+
 procedure TViewPedidos.FormResize(Sender: TObject);
 begin
-  var LTamanhoListBoxIem :=  (ListBox1.Width - 40) / 2;
+  var LTamanhoListBoxIem :=  (ListBox1.Width - 20) / 2;
   ListBox1.ItemHeight := LTamanhoListBoxIem;
   ListBox1.ItemWidth  := LTamanhoListBoxIem;
 
+end;
+
+procedure TViewPedidos.ListBoxItem1Click(Sender: TObject);
+begin
+  ViewPedidosItens.Show;
 end;
 
 end.

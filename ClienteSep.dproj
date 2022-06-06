@@ -201,8 +201,8 @@
             <Form>ViewPedidos</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="ClienteSep.View.Itens.pas">
-            <Form>Form1</Form>
+        <DCCReference Include="ClienteSep.View.Pedidos.Itens.pas">
+            <Form>ViewPedidosItens</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
