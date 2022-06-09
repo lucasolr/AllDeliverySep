@@ -10,13 +10,13 @@ uses
 type
   TViewPedidos = class(TForm)
     LayoutRodape: TLayout;
-    CircleAguardando: TCircle;
     LabelAguardando: TLabel;
     CircleSeparando: TCircle;
     LabelSeparando: TLabel;
     Top: TRectangle;
-    StyleBook1: TStyleBook;
+    TextValor: TStyleBook;
     ListBox1: TListBox;
+    CircleAguardando: TCircle;
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure ListBoxItem1Click(Sender: TObject);
@@ -44,9 +44,12 @@ begin
     var ListBoxItem := TListBoxItem.Create(ListBox1);
     ListBoxItem.Parent := ListBox1;
     ListBoxItem.OnClick := ListBoxItem1Click;
-    ListBoxItem.StyleLookup := 'ListBoxitemPedidos';
+    ListBoxItem.StyleLookup := 'View.PedidosListBox';
     ListBoxItem.StylesData['TextNomeCliente'] := 'Cliente ' + I.ToString;
-    ListBoxItem.StylesData['TextDataAgendamento'] := ' Agendado para as 16h ' + I.ToString;
+    ListBoxItem.StylesData['TextDataAgendamento'] := ' Agendado para as 16h ';
+    ListBoxItem.stylesData['TextDataPedido'] := ' 2/12/2022 ';
+    ListBoxItem.stylesData['TextCodigo']  := '#777' + I.ToString;
+    ListBoxItem.stylesData['TextValor'] := 'R$ '+ formatcurr(',#0.00',700);
     Inc(I);
   end;
 end;
@@ -58,9 +61,9 @@ end;
 
 procedure TViewPedidos.FormResize(Sender: TObject);
 begin
-  var LTamanhoListBoxIem :=  (ListBox1.Width - 20) / 2;
-  ListBox1.ItemHeight := LTamanhoListBoxIem;
-  ListBox1.ItemWidth  := LTamanhoListBoxIem;
+//  var LTamanhoListBoxIem :=  (ListBox1.Width - 20) / 2;
+//  ListBox1.ItemHeight := LTamanhoListBoxIem;
+//  ListBox1.ItemWidth  := LTamanhoListBoxIem;
 
 end;
 
