@@ -6,7 +6,8 @@ uses
   ClienteSep.View.Login in 'ClienteSep.View.Login.pas' {ViewLogin},
   Infra.Styles in 'Infra.Styles.pas' {InfraStyles},
   ClienteSep.View.Pedidos in 'ClienteSep.View.Pedidos.pas' {ViewPedidos},
-  ClienteSep.View.Pedidos.Itens in 'ClienteSep.View.Pedidos.Itens.pas' {ViewPedidosItens};
+  ClienteSep.View.Pedidos.Itens in 'ClienteSep.View.Pedidos.Itens.pas' {ViewPedidosItens},
+  Utils in 'Utils.pas';
 
 {$R *.res}
 

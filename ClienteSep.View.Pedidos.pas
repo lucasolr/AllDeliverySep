@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox;
+  FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.DialogService;
 
 type
   TViewPedidos = class(TForm)
@@ -22,6 +22,7 @@ type
     procedure ListBoxItem1Click(Sender: TObject);
   private
     { Private declarations }
+
     procedure CarregarPedidos;
   public
     { Public declarations }
@@ -71,5 +72,6 @@ procedure TViewPedidos.ListBoxItem1Click(Sender: TObject);
 begin
   ViewPedidosItens.Show;
 end;
+
 
 end.

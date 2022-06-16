@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.ListBox, FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Layouts, FMX.ListBox, FMX.Controls.Presentation, FMX.StdCtrls, Utils;
 
 type
   TViewPedidosItens = class(TForm)
@@ -39,8 +39,12 @@ uses
 
 procedure TViewPedidosItens.Button1Click(Sender: TObject);
 begin
-  Close;
-  ViewPedidos.Show;
+  MensagemYesNo('Confirmar Separação? ',
+  procedure
+  begin
+   Close;
+   ViewPedidos.Show;
+  end)
 end;
 
 procedure TViewPedidosItens.CarregarItensDosPedidos;
